@@ -10,7 +10,7 @@ export const MainPage = () => {
 
   return (
     <div>
-      <nav>
+      <div>
         {restaurants.map(restaurant => (
           <Button
             key={restaurant.id}
@@ -18,7 +18,7 @@ export const MainPage = () => {
             onClick={() => setActiveRestaurant(restaurant.name)}
           />
         ))}
-      </nav>
+      </div>
        <NewRestaurant restaurant={restaurant} ></NewRestaurant>
       
     </div>
