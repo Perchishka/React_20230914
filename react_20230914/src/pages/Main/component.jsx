@@ -6,21 +6,25 @@ import { useState } from "react";
 
 export const MainPage = () => {
   const [restaurantName, setActiveRestaurant] = useState(restaurants[0].name);
-  const restaurant = restaurants.find(r => r.name === restaurantName);
+  const restaurant = restaurants.find((r) => r.name === restaurantName);
+
+  if (!restaurants?.length) {
+    return null;
+  }
 
   return (
     <div>
       <div>
-        {restaurants.map(restaurant => (
+        {restaurants.map((restaurant) => (
           <Button
             key={restaurant.id}
             title={restaurant.name}
+            disabled={false}
             onClick={() => setActiveRestaurant(restaurant.name)}
           />
         ))}
       </div>
-       <NewRestaurant restaurant={restaurant} ></NewRestaurant>
-      
+      <NewRestaurant restaurant={restaurant}></NewRestaurant>
     </div>
   );
 };
