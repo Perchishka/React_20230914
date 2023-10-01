@@ -13,11 +13,21 @@
     background-color: #ffc500
 }
 
-.disabled {
-    background-color: #83817e;
+button:disabled {
+    background-color: #b3aea7;
 }
 
 .counter {
     background-color: #ecd2ab;
     border-radius: 5px;
+}
+
+.primary:active{
+    background:#9c3fc0;
+    color: #ffc500;
+}
+
+.primary:focus{
+    background:#9c3fc0;
+    color: #ffc500;
 }
