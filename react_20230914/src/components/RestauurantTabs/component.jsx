@@ -1,4 +1,4 @@
-import { Button } from "../Button/component";
+import { Button } from "../BaseComponents/Button/component";
 
 export const RestaurantTabs = ({ restaurants, onTabClick }) => {
   return (

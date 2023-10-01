@@ -1,0 +1,23 @@
+.rootButton {
+    text-align: center;
+    color: #1f1608;
+    width: 90px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px;
+}
+
+.primary {
+    composes: rootButton;
+    background-color: #ffc500
+}
+
+.disabled {
+    background-color: #83817e;
+}
+
+.counter {
+    background-color: #ecd2ab;
+    border-radius: 5px;
+}
