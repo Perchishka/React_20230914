@@ -1,12 +1,11 @@
 import React from "react";
 import { restaurants } from "../../constants/mock";
-import { Button } from "../../components/Button/component";
-import { NewRestaurant } from "../../components/NewRestaurant/component";
+import { Restaurant } from "../../components/Restaurant/component";
 import { useState } from "react";
+import { RestaurantTabs } from "../../components/RestauurantTabs/component";
 
 export const MainPage = () => {
-  const [restaurantName, setActiveRestaurant] = useState(restaurants[0].name);
-  const restaurant = restaurants.find((r) => r.name === restaurantName);
+  const [restaurantIndex, setRestaurantIndex] = useState(0);
 
   if (!restaurants?.length) {
     return null;
@@ -14,17 +13,11 @@ export const MainPage = () => {
 
   return (
     <div>
-      <div>
-        {restaurants.map((restaurant) => (
-          <Button
-            key={restaurant.id}
-            title={restaurant.name}
-            disabled={false}
-            onClick={() => setActiveRestaurant(restaurant.name)}
-          />
-        ))}
-      </div>
-      <NewRestaurant restaurant={restaurant}></NewRestaurant>
+      <RestaurantTabs
+        restaurants={restaurants}
+        onTabClick={setRestaurantIndex}
+      />
+      <Restaurant restaurant={restaurants[restaurantIndex]}></Restaurant>
     </div>
   );
 };

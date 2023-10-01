@@ -1,13 +1,11 @@
-import { OrderCounter } from "../OrderCounter/component";
+import { Dish } from "../Dish/component";
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ dishes }) => {
   return (
     <ul>
-      {menu?.map((menuItem) => (
-        <li key={menuItem.id}>
-          <span>
-            {menuItem.name} - ${menuItem.price} <OrderCounter />
-          </span>
+      {dishes?.map((dish) => (
+        <li key={dish.id}>
+          <Dish dish={dish} />
         </li>
       ))}
     </ul>
