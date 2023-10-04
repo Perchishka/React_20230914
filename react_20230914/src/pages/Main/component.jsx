@@ -3,7 +3,7 @@ import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../../components/Restaurant/component";
 import { useState } from "react";
 import { RestaurantTabs } from "../../components/RestauurantTabs/component";
-import "./index.css"
+import styles from "./styles.module.css";
 import { Footer } from "../../components/Footer/component";
 import { Header } from "../../components/Header/component";
 import { links } from "../../constants/footer";
@@ -16,14 +16,14 @@ export const MainPage = () => {
   }
 
   return (
-    <div>
-      <Header />
+    <div className={styles.root}>
+      <Header className={styles.header} />
       <RestaurantTabs
-      restaurants={restaurants}
-      onTabClick={setRestaurantIndex}
-    />
+        restaurants={restaurants}
+        onTabClick={setRestaurantIndex}
+      />
       <Restaurant restaurant={restaurants[restaurantIndex]}></Restaurant>
-      <Footer links = {links}></Footer>
+      <Footer className={styles.footer} links={links}></Footer>
     </div>
   );
 };

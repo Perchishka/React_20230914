@@ -1,9 +1,7 @@
 .header {
-    position: sticky;
     display: flex;
     background-color: #280033;
     justify-content: center;
-    padding: 15px;
 }
 
 

@@ -1,0 +1,15 @@
+.header{
+    position: sticky;
+    top: 0;
+    grid-row: 1/2;
+}
+
+.root{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 100px auto auto
+}
+
+.footer{
+ margin-top: auto
+}

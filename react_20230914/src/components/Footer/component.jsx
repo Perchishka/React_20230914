@@ -1,12 +1,13 @@
 import React from "react";
+import classNames from "classnames";
 import styles from "./styles.module.css";
 import { Link } from "../BaseComponents/Link/link";
 import FooterLink from "../FooterLink/styles.module.css";
 
-export const Footer = ({ links }) => {
+export const Footer = ({ links, className }) => {
   const madeBy = { name: "Perchishka", path: "https://github.com/Perchishka" };
   return (
-    <div className={styles.footer}>
+    <div className={classNames(styles.footer, className)}>
       <ul className={styles.linkList}>
         {links.map((link) => (
           <li key={link.id}>
