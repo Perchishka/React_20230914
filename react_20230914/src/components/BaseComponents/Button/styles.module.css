@@ -31,3 +31,8 @@ button:disabled {
     background:#9c3fc0;
     color: #ffc500;
 }
+
+.dark{
+    background-color: #2c0329; 
+    color: white;
+}
