@@ -11,7 +11,7 @@ import { ThemeProvider, ThemeContext } from "../../contexts/Theme";
 
 import styles from "./styles.module.css";
 
-export const MainPage = () => {
+export const MainPage = ({children}) => {
   const [restaurantIndex, setRestaurantIndex] = useState(0);
 
   if (!restaurants?.length) {

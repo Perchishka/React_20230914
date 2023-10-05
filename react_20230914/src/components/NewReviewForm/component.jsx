@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { Button } from "../BaseComponents/Button/component";
 
 const DEFAULT_VALUE = {
   name: "",
@@ -53,7 +54,7 @@ export const NewReviewForm = () => {
           }}
         />
       </div>
-      <button onClick={() => dispatch({ type: "save" })} />
+      <Button title="Add review" onClick={() => dispatch({ type: "save" })} />
     </div>
   );
 };

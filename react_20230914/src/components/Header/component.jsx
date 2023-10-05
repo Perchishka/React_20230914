@@ -17,8 +17,8 @@ export const Header = ({ className }) => {
         <Link link={madeBy}></Link>
       </div>
       <div>
-        <Button onClick={()=> setTheme(false)} >"White theme"</Button>
-        <Button onClick={()=> setTheme(true)}>"Dark theme"</Button>
+        <Button title = "Light" onClick={()=> setTheme(false)} ></Button>
+        <Button title = "Dark" onClick={()=> setTheme(true)}></Button>
       </div>
     </div>
   );
