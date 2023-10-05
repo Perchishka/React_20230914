@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../../components/Restaurant/component";
 import { useState } from "react";
