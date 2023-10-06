@@ -1,18 +1,21 @@
 import { useState } from "react";
-import { Button } from "../Button/component";
+import { Button } from "../BaseComponents/Button/component";
+
 export const OrderCounter = () => {
   const [amount, setAmount] = useState(0);
 
   return (
     <span>
       <Button
-        title="-"
+        type="counter"
+        title=" - "
         onClick={() => setAmount(amount - 1)}
         disabled={amount === 0}
       />
       {amount}
       <Button
-        title="+"
+        type="counter"
+        title=" + "
         onClick={() => setAmount(amount + 1)}
         disabled={amount === 5}
       />

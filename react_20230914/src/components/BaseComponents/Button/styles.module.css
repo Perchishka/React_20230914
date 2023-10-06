@@ -1,0 +1,38 @@
+.rootButton {
+    text-align: center;
+    color: #1f1608;
+    width: 90px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px;
+}
+
+.primary {
+    composes: rootButton;
+    background-color: #ffc500
+}
+
+button:disabled {
+    background-color: #b3aea7;
+}
+
+.counter {
+    background-color: #ecd2ab;
+    border-radius: 5px;
+}
+
+.primary:active{
+    background:#9c3fc0;
+    color: #ffc500;
+}
+
+.primary:focus{
+    background:#9c3fc0;
+    color: #ffc500;
+}
+
+.dark{
+    background-color: #5f555e; 
+    color: white;
+}
