@@ -8,17 +8,15 @@ export const OrderCounter = () => {
     <span>
       <Button
         type="counter"
-        title=" - "
         onClick={() => setAmount(amount - 1)}
         disabled={amount === 0}
-      />
+      >-</Button>
       {amount}
       <Button
         type="counter"
-        title=" + "
         onClick={() => setAmount(amount + 1)}
         disabled={amount === 5}
-      />
+      >+</Button>
     </span>
   );
 };

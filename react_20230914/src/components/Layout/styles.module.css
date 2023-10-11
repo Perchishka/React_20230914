@@ -1,0 +1,37 @@
+.header{
+    position: sticky;
+    top: 0;
+    grid-row: 1/2;
+}
+
+
+.footer{
+ margin-top: auto
+}
+
+.root{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 100px auto auto;
+    z-index: 0;
+}
+
+
+.modalContainer {
+    top:0;
+    left: 0;
+    z-index: 1;
+    position: absolute;
+}
+
+.popoverContainer{
+    top:0;
+    left: 0;
+    z-index: 2;
+    position: absolute;
+}
+
+.tooltipContainer {
+    z-index: 3;
+    position: absolute;
+}
