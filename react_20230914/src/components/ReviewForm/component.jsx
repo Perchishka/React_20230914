@@ -25,11 +25,13 @@ const reducer = (state, action) => {
   }
 };
 
-export const ReviewForm = ({onSubmit, className}) => {
+export const ReviewForm = ({ onSubmit, className }) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_VALUE);
 
   return (
-    <div className={classNames(styles.reviewForm, className)}> Review Form
+    <div className={classNames(styles.reviewForm, className)}>
+      {" "}
+      Review Form
       <div>
         <span>Name </span>
         <input
@@ -57,7 +59,7 @@ export const ReviewForm = ({onSubmit, className}) => {
           }}
         />
       </div>
-      <Button onClick={onSubmit}>Submit</Button> 
+      <Button onClick={onSubmit}>Submit</Button>
     </div>
   );
 };

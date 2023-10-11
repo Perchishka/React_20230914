@@ -2,7 +2,7 @@ import React from "react";
 import { restaurants } from "../../constants/mock";
 import { Restaurant } from "../../components/Restaurant/component";
 import { useState } from "react";
-import { RestaurantTabs } from "../../components/RestauurantTabs/component";
+import { RestaurantTabs } from "../../components/RestaurantTabs/component";
 import { Layout } from "../../components/Layout/component";
 
 export const MainPage = () => {
