@@ -1,5 +1,8 @@
 import { useReducer } from "react";
 import { Button } from "../BaseComponents/Button/component";
+import classNames from "classnames";
+
+import styles from "./styles.module.css";
 
 const DEFAULT_VALUE = {
   name: "",
@@ -22,11 +25,13 @@ const reducer = (state, action) => {
   }
 };
 
-export const NewReviewForm = () => {
+export const ReviewForm = ({ onSubmit, className }) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_VALUE);
 
   return (
-    <div>
+    <div className={classNames(styles.reviewForm, className)}>
+      {" "}
+      Review Form
       <div>
         <span>Name </span>
         <input
@@ -54,7 +59,7 @@ export const NewReviewForm = () => {
           }}
         />
       </div>
-      <Button title="Add review" onClick={() => dispatch({ type: "save" })} />
+      <Button onClick={onSubmit}>Submit</Button>
     </div>
   );
 };

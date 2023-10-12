@@ -2,8 +2,8 @@ import { OrderCounter } from "../OrderCounter/component";
 
 export const Dish = ({ dish }) => {
   return (
-    <span>
+    <div>
       {dish.name} - ${dish.price} {<OrderCounter />}
-    </span>
+    </div>
   );
 };
