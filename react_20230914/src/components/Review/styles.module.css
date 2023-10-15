@@ -1,0 +1,8 @@
+.review{
+    white-space: nowrap;
+   
+}
+
+.review>div {
+    display: inline-block;
+}
