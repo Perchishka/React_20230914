@@ -12,10 +12,11 @@ import { REQUEST_STATUS } from "../../constants/statuses";
 
 export const MainPage = () => {
   const restaurantIds = useSelector(selectRestaurantIds);
-  const loadingStatus = useSelector(selectRestaurantLoadingStatus);
-  const [activeRestaurantId, setActiveResraurantId] = useState(
+  const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurantIds[0]
   );
+  const loadingStatus = useSelector(selectRestaurantLoadingStatus);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,12 +25,15 @@ export const MainPage = () => {
 
   return (
     <Layout>
-      <RestaurantTabsContainer
-        onTabClick={setActiveResraurantId}
-        activeRestaurantId={activeRestaurantId}
-      />
-      {loadingStatus === REQUEST_STATUS.pending ?  <Div>Loading...</Div> : <RestaurantContainer restaurantId={activeRestaurantId} />
-      }
+      {loadingStatus === REQUEST_STATUS.pending ? (
+        <Div>Loading...</Div>
+      ) : (
+        <RestaurantTabsContainer
+          onTabClick={setActiveRestaurantId}
+          activeRestaurantId={activeRestaurantId}
+        />
+      )}
+      <RestaurantContainer restaurantId={activeRestaurantId} />
     </Layout>
   );
 };
