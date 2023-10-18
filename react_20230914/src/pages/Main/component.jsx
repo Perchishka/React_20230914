@@ -13,7 +13,9 @@ import { REQUEST_STATUS } from "../../constants/statuses";
 export const MainPage = () => {
   const restaurantIds = useSelector(selectRestaurantIds);
   const loadingStatus = useSelector(selectRestaurantLoadingStatus);
-  const [activeRestaurantId, setActiveResraurantId] = useState(restaurantIds[0]);
+  const [activeRestaurantId, setActiveResraurantId] = useState(
+    restaurantIds[0]
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,11 +28,8 @@ export const MainPage = () => {
         onTabClick={setActiveResraurantId}
         activeRestaurantId={activeRestaurantId}
       />
-      {loadingStatus === REQUEST_STATUS.pending ? (
-        <Div>Loading...</Div>
-      ) : (
-        <RestaurantContainer restaurantId={activeRestaurantId} />
-      )}
+      {loadingStatus === REQUEST_STATUS.pending ?  <Div>Loading...</Div> : <RestaurantContainer restaurantId={activeRestaurantId} />
+      }
     </Layout>
   );
 };
