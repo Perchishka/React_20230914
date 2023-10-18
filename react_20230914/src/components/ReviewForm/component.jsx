@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { Button } from "../BaseComponents/Button/component";
+import { RatingInput } from "../RatingInput/component";
 import classNames from "classnames";
 
 import styles from "./styles.module.css";
@@ -7,7 +8,7 @@ import styles from "./styles.module.css";
 const DEFAULT_VALUE = {
   name: "",
   text: "",
-  rating: "",
+  rating: 1,
 };
 
 const reducer = (state, action) => {
@@ -30,7 +31,6 @@ export const ReviewForm = ({ onSubmit, className }) => {
 
   return (
     <div className={classNames(styles.reviewForm, className)}>
-      {" "}
       Review Form
       <div>
         <span>Name </span>
@@ -52,12 +52,7 @@ export const ReviewForm = ({ onSubmit, className }) => {
       </div>
       <div>
         <span>Rating </span>
-        <input
-          value={formValue.rating}
-          onChange={(event) => {
-            dispatch({ type: "setRating", payload: event.target.value });
-          }}
-        />
+        <RatingInput value={formValue.rating} onChange={(value) => dispatch({type:"setRating", payload: value })}/>
       </div>
       <Button onClick={onSubmit}>Submit</Button>
     </div>

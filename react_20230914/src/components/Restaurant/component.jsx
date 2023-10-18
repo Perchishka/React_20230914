@@ -3,11 +3,12 @@ import { Menu } from "../Menu/component";
 import { AddReviewButton } from "../AddReviewButton/component";
 
 export const Restaurant = ({ restaurant }) => {
+
   return (
     <div>
       <h2>{restaurant.name}</h2>
-      <Menu dishes={restaurant.menu} />
-      <Reviews reviews={restaurant.reviews} />
+      <Menu menuIds={restaurant.menu} />
+      <Reviews reviewsIds={restaurant.reviews} />
       <AddReviewButton />
     </div>
   );
