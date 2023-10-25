@@ -18,21 +18,16 @@ export const MainPage = () => {
   const loadingStatus = useSelector(selectRestaurantLoadingStatus);
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(getRestaurants());
   }, []);
 
   return (
-    <Layout>
-      {loadingStatus === REQUEST_STATUS.pending ? (
-        <Div>Loading...</Div>
-      ) : (
+    <Layout>{loadingStatus ===REQUEST_STATUS.pending ? <Div>Loading...</Div> :
         <RestaurantTabsContainer
           onTabClick={setActiveRestaurantId}
           activeRestaurantId={activeRestaurantId}
-        />
-      )}
+        />}
       <RestaurantContainer restaurantId={activeRestaurantId} />
     </Layout>
   );
