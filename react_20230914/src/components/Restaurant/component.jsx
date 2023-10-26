@@ -1,13 +1,14 @@
-import { Reviews } from "../Reviews/component";
-import { Menu } from "../Menu/component";
 import { AddReviewButton } from "../AddReviewButton/component";
+import { MenuContainer } from "../Menu/container";
+import { ReviewsContainer } from "../Reviews/container";
 
 export const Restaurant = ({ restaurant }) => {
+
   return (
     <div>
       <h2>{restaurant.name}</h2>
-      <Menu dishes={restaurant.menu} />
-      <Reviews reviews={restaurant.reviews} />
+      <MenuContainer restaurantId={restaurant.id} />
+      <ReviewsContainer restaurantId={restaurant.id} />
       <AddReviewButton />
     </div>
   );
