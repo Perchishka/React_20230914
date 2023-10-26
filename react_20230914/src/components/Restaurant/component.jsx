@@ -1,7 +1,6 @@
-import { Reviews } from "../Reviews/component";
-import { Menu } from "../Menu/component";
 import { AddReviewButton } from "../AddReviewButton/component";
 import { MenuContainer } from "../Menu/container";
+import { ReviewsContainer } from "../Reviews/container";
 
 export const Restaurant = ({ restaurant }) => {
 
@@ -9,7 +8,7 @@ export const Restaurant = ({ restaurant }) => {
     <div>
       <h2>{restaurant.name}</h2>
       <MenuContainer restaurantId={restaurant.id} />
-      <Reviews reviewsIds={restaurant.reviews} />
+      <ReviewsContainer restaurantId={restaurant.id} />
       <AddReviewButton />
     </div>
   );

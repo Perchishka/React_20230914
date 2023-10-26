@@ -9,7 +9,7 @@ const { reducer } = createSlice({
   initialState: entityAdapter.getInitialState(),
   extraReducers: (builder) =>
     builder
-      .addCase(getDishes.fulfilled, (state, { payload }) => {
+      .addCase(getDishes.fulfilled, (state, { payload } = {}) => {
         entityAdapter.setMany(state, payload);
         state.status = REQUEST_STATUS.fulfilled;
       }),

@@ -1,5 +1,5 @@
 import { createEntityAdapter, createSlice } from "@reduxjs/toolkit";
-import { loadusersIfNotExist } from "./thunks/get-users";
+import { getUsersIfNotExist } from "./thunks/get-users";
 const userEntityAdapter = createEntityAdapter();
 
 const { reducer } = createSlice({
@@ -7,9 +7,10 @@ const { reducer } = createSlice({
   initialState: userEntityAdapter.getInitialState(),
   extraReducers: (builder) =>
     builder.addCase(
-      loadusersIfNotExist.fulfilled,
+      getUsersIfNotExist.fulfilled,
       (state, { payload } = {}) => {
         userEntityAdapter.setAll(state, payload);
+        state.status = REQUEST_STATUS.fulfilled;
       }
     ),
 });

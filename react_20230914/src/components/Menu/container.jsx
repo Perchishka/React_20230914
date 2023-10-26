@@ -4,14 +4,17 @@ import { Menu } from "./component";
 import { useEffect } from "react";
 import { getDishes } from "../../redux/entities/dish/thunks/get-dishes";
 
-export const MenuContainer = ({restaurantId})=>{
+export const MenuContainer = ({ restaurantId }) => {
+  const menu = useSelector((state) =>
+    selectRestaurantMenuById(state, restaurantId)
+  );
 
-    const menu = useSelector((state)=>selectRestaurantMenuById(state, restaurantId))
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
-     useEffect(()=>{
-dispatch(getDishes(restaurantId))
-     }, [restaurantId])
-    return <Menu restaurantMenu={menu}/>
+  useEffect(() => {
+    console.log(getDishes(restaurantId))
+    dispatch(getDishes(restaurantId));
+  }, [restaurantId]);
 
-} 
+  return <Menu menu={menu} />;
+};

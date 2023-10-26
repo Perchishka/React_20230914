@@ -3,9 +3,9 @@ import { selectDishIds} from "../selectors";
 import { selectRestaurantMenuById } from "../../restaurant/selectors";
 
 export const getDishes = createAsyncThunk(
-  "restaurants/getDishes",
+  "dishes/getDishes",
   async (restaurantId) => {
-    const response = fetch(`http://localhost:3001/api/dishes?restaurantId=:${restaurantId}`);
+    const response = fetch(`http://localhost:3001/api/dishes?restaurantId=${restaurantId}`);
     return (await response).json();
   },
   {
@@ -14,7 +14,7 @@ export const getDishes = createAsyncThunk(
       const restaurantMenu = selectRestaurantMenuById(state, restaurantId);
       const dishesId = selectDishIds(state);
 
-      return ( restaurantMenu && restaurantMenu.some((restaurantId) => dishesId.includes(restaurantId)));
+      return ( restaurantMenu && restaurantMenu.some((restaurantId) => !dishesId.includes(restaurantId)));
     },
   }
 );

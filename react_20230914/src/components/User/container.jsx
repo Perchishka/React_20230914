@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux"
-import { selectReviewById } from "../../redux/entities/review/selector"
 import { User } from "./component";
+import { selectUserById } from "../../redux/entities/user/selector";
 
 export const UserContainer = ({userId}) => {
- const user = useSelector((state)=> selectReviewById(state, userId));
+ const user = useSelector((state)=> selectUserById(state, userId));
 if(!user){
     return null;
 }
